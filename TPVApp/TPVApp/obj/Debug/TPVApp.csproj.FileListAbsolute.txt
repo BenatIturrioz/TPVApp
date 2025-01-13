@@ -52,3 +52,4 @@ C:\Users\benat\Desktop\TPVApp\TPVApp\TPVApp\obj\Debug\TPVApp.csproj.CoreCompileI
 C:\Users\benat\Desktop\TPVApp\TPVApp\TPVApp\obj\Debug\TPVApp.csproj.Up2Date
 C:\Users\benat\Desktop\TPVApp\TPVApp\TPVApp\obj\Debug\TPVApp.exe
 C:\Users\benat\Desktop\TPVApp\TPVApp\TPVApp\obj\Debug\TPVApp.pdb
+C:\Users\benat\Desktop\TPVApp\TPVApp\TPVApp\obj\Debug\TPVApp.Form3.resources

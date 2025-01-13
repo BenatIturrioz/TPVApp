@@ -54,7 +54,24 @@ namespace TPVApp
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            mahaiaTextBox.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            dataTextBox.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            prezioTotalaTextBox.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
