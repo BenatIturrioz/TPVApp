@@ -37,7 +37,7 @@
             // 
             // erabiltzaileaTextBox
             // 
-            this.erabiltzaileaTextBox.Location = new System.Drawing.Point(408, 271);
+            this.erabiltzaileaTextBox.Location = new System.Drawing.Point(1108, 641);
             this.erabiltzaileaTextBox.Name = "erabiltzaileaTextBox";
             this.erabiltzaileaTextBox.Size = new System.Drawing.Size(247, 31);
             this.erabiltzaileaTextBox.TabIndex = 0;
@@ -50,14 +50,14 @@
             // 
             // pasahitzaTextBox
             // 
-            this.pasahitzaTextBox.Location = new System.Drawing.Point(408, 350);
+            this.pasahitzaTextBox.Location = new System.Drawing.Point(1108, 720);
             this.pasahitzaTextBox.Name = "pasahitzaTextBox";
             this.pasahitzaTextBox.Size = new System.Drawing.Size(247, 31);
             this.pasahitzaTextBox.TabIndex = 2;
             // 
             // saioaHasiButton
             // 
-            this.saioaHasiButton.Location = new System.Drawing.Point(455, 440);
+            this.saioaHasiButton.Location = new System.Drawing.Point(1155, 810);
             this.saioaHasiButton.Name = "saioaHasiButton";
             this.saioaHasiButton.Size = new System.Drawing.Size(144, 49);
             this.saioaHasiButton.TabIndex = 3;
@@ -69,7 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 607);
+            this.ClientSize = new System.Drawing.Size(2278, 1137);
             this.Controls.Add(this.saioaHasiButton);
             this.Controls.Add(this.pasahitzaTextBox);
             this.Controls.Add(this.erabiltzaileaTextBox);

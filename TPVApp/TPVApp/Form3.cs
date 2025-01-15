@@ -27,11 +27,8 @@ namespace TPVApp
             messageArea = new FlowLayoutPanel
             {
                 Dock = DockStyle.Fill,
-                AutoScroll = true,
-                FlowDirection = FlowDirection.TopDown,
-                WrapContents = false
+                AutoScroll = true
             };
-
             messageField = new TextBox
             {
                 Dock = DockStyle.Bottom
@@ -44,7 +41,7 @@ namespace TPVApp
 
         private void MessageField_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13) // Si se presiona la tecla Enter
+            if (e.KeyChar == (char)13) // Enter key
             {
                 HandleSendMessage();
             }
@@ -55,8 +52,8 @@ namespace TPVApp
             string message = messageField.Text;
             if (!string.IsNullOrEmpty(message))
             {
-                AddMessage(message, true); // Mostrar mensaje enviado
-                SendMessage(message);      // Enviar mensaje al servidor
+                AddMessage(message, true); // Show sent message
+                SendMessage(message); // Send message to server
                 messageField.Clear();
             }
         }
@@ -70,7 +67,6 @@ namespace TPVApp
                 inReader = new StreamReader(networkStream);
                 outWriter = new StreamWriter(networkStream, System.Text.Encoding.UTF8);
 
-                // Hilo para recibir mensajes
                 Thread receiveThread = new Thread(ReceiveMessages);
                 receiveThread.IsBackground = true;
                 receiveThread.Start();
@@ -89,7 +85,7 @@ namespace TPVApp
                 string incomingMessage;
                 while ((incomingMessage = inReader.ReadLine()) != null)
                 {
-                    // Actualizar la UI en el hilo principal
+                    // Update UI on the UI thread
                     Invoke((MethodInvoker)delegate
                     {
                         AddMessage(incomingMessage, false);
@@ -113,7 +109,6 @@ namespace TPVApp
 
         private void AddMessage(string message, bool isSentByUser)
         {
-            // Crear la etiqueta para el mensaje
             Label messageLabel = new Label
             {
                 Text = message,
@@ -122,40 +117,27 @@ namespace TPVApp
                 Padding = new Padding(10)
             };
 
-            // Estilo para los mensajes enviados por el usuario
             if (isSentByUser)
             {
                 messageLabel.BackColor = System.Drawing.Color.LightBlue;
                 messageLabel.ForeColor = System.Drawing.Color.Black;
                 messageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             }
-            else // Mensajes recibidos
+            else
             {
                 messageLabel.BackColor = System.Drawing.Color.LightGreen;
                 messageLabel.ForeColor = System.Drawing.Color.Black;
                 messageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             }
 
-            // Crear el contenedor para el mensaje
             FlowLayoutPanel messageBox = new FlowLayoutPanel
             {
                 FlowDirection = isSentByUser ? FlowDirection.RightToLeft : FlowDirection.LeftToRight,
                 Dock = DockStyle.Top
             };
             messageBox.Controls.Add(messageLabel);
-
-            // Añadir un espaciador vacío para el salto de línea
-            FlowLayoutPanel spacePanel = new FlowLayoutPanel
-            {
-                Height = 10, // Puedes ajustar la altura del espacio
-                Width = 0
-            };
-
-            // Agregar el mensaje y el espaciador al panel principal
             messageArea.Controls.Add(messageBox);
-            messageArea.Controls.Add(spacePanel);
         }
     }
 }
-
 
