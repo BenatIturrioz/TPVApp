@@ -55,6 +55,10 @@ namespace TPVApp
             prezioainfo = dataGridView1.CurrentRow.Cells[3].Value.ToString();
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -139,5 +143,7 @@ namespace TPVApp
         {
 
         }
+
+        
     }
 }
