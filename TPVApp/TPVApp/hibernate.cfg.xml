@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+	<session-factory>
+		<!-- Conexión a la base de datos -->
+		<property name="connection.driver_class">NHibernate.Driver.MySqlDataDriver</property>
+		<property name="connection.connection_string">
+			Server=localhost;Database=erronka_1;User ID=root;Password=1WMG2023;
+		</property>
+		<property name="dialect">NHibernate.Dialect.MySQLDialect</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+
+		<!-- Configuración opcional -->
+		<property name="connection.release_mode">on_close</property>
+
+		<!-- Mapeo de clases -->
+		<mapping resource="Eskaera.hbm.xml" />
+		<mapping resource="ProduktuEskaera.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>
+
