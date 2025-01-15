@@ -38,23 +38,25 @@
             this.dataTextBox = new System.Windows.Forms.TextBox();
             this.prezioTotalaTextBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(83, 50);
+            this.dataGridView1.Location = new System.Drawing.Point(82, 43);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(613, 831);
+            this.dataGridView1.Size = new System.Drawing.Size(865, 831);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(831, 43);
+            this.button1.Location = new System.Drawing.Point(1041, 36);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(268, 98);
             this.button1.TabIndex = 1;
@@ -71,7 +73,7 @@
             this.groupBox1.Controls.Add(this.dataTextBox);
             this.groupBox1.Controls.Add(this.prezioTotalaTextBox);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Location = new System.Drawing.Point(806, 205);
+            this.groupBox1.Location = new System.Drawing.Point(1016, 198);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(338, 676);
             this.groupBox1.TabIndex = 2;
@@ -100,7 +102,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 89);
+            this.label1.Location = new System.Drawing.Point(37, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 25);
             this.label1.TabIndex = 4;
@@ -108,7 +110,7 @@
             // 
             // mahaiaTextBox
             // 
-            this.mahaiaTextBox.Location = new System.Drawing.Point(33, 117);
+            this.mahaiaTextBox.Location = new System.Drawing.Point(33, 175);
             this.mahaiaTextBox.Name = "mahaiaTextBox";
             this.mahaiaTextBox.Size = new System.Drawing.Size(260, 31);
             this.mahaiaTextBox.TabIndex = 3;
@@ -137,11 +139,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(1384, 43);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 82;
+            this.dataGridView2.RowTemplate.Height = 33;
+            this.dataGridView2.Size = new System.Drawing.Size(916, 831);
+            this.dataGridView2.TabIndex = 3;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2225, 949);
+            this.ClientSize = new System.Drawing.Size(2312, 949);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
@@ -151,6 +165,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -167,5 +182,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

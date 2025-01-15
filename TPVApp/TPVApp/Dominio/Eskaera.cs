@@ -14,15 +14,16 @@ namespace TPVApp.Dominio
         public virtual int Id {  get; set; }
         public virtual int Langilea_id { get; set; }
         public virtual int Erreserba_id { get; set; }
+        public virtual int Mahaia {  get; set; }
         public virtual DateTime Data {  get; set; }
         public virtual float PrezioTotala { get; set; }
-        public virtual byte? Galera {  get; set; }
+        public virtual byte? Ordaindua {  get; set; }
 
-        public static void ProduktuakErakutsi(DataGridView dataGridView1)
+        public static void EskaerakErakutsi(DataGridView dataGridView1)
         {
             // Crear una instancia de la conexión
             Connection connection = new Connection();
-            string query = "SELECT mahaia_id, data, prezioTotala FROM eskaera";
+            string query = "SELECT erreserba_id, mahaia_id, data, prezioTotala FROM eskaera";
 
             using (MySqlConnection konexioa = connection.GetConnection())
             {

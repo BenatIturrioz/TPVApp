@@ -23,6 +23,7 @@ namespace TPVApp.Dominio
                 // Crear nombre del archivo PDF
                 string filePath = Path.Combine(desktopPath, "Cuenta_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".pdf");
 
+
                 // Crear documento PDF
                 Document document = new Document();
                 PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
