@@ -37,7 +37,7 @@
             // 
             // erabiltzaileaTextBox
             // 
-            this.erabiltzaileaTextBox.Location = new System.Drawing.Point(1108, 641);
+            this.erabiltzaileaTextBox.Location = new System.Drawing.Point(1142, 670);
             this.erabiltzaileaTextBox.Name = "erabiltzaileaTextBox";
             this.erabiltzaileaTextBox.Size = new System.Drawing.Size(247, 31);
             this.erabiltzaileaTextBox.TabIndex = 0;
@@ -50,14 +50,14 @@
             // 
             // pasahitzaTextBox
             // 
-            this.pasahitzaTextBox.Location = new System.Drawing.Point(1108, 720);
+            this.pasahitzaTextBox.Location = new System.Drawing.Point(1142, 749);
             this.pasahitzaTextBox.Name = "pasahitzaTextBox";
             this.pasahitzaTextBox.Size = new System.Drawing.Size(247, 31);
             this.pasahitzaTextBox.TabIndex = 2;
             // 
             // saioaHasiButton
             // 
-            this.saioaHasiButton.Location = new System.Drawing.Point(1155, 810);
+            this.saioaHasiButton.Location = new System.Drawing.Point(1189, 839);
             this.saioaHasiButton.Name = "saioaHasiButton";
             this.saioaHasiButton.Size = new System.Drawing.Size(144, 49);
             this.saioaHasiButton.TabIndex = 3;

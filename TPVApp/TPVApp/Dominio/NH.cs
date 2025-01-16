@@ -19,9 +19,9 @@ namespace TPVApp.Dominio
             try
             {
                 myConfiguration = new NHibernate.Cfg.Configuration();
-                myConfiguration.Configure(); // Lee el archivo hibernate.cfg.xml
+                myConfiguration.Configure(); 
                 myConfiguration.AddAssembly(typeof(Eskaera).Assembly);
-                myConfiguration.AddAssembly(typeof(ProduktuEskaera).Assembly);  // Agrega esto
+                myConfiguration.AddAssembly(typeof(ProduktuEskaera).Assembly);  
 
                 mySessionFactory = myConfiguration.BuildSessionFactory();
             }

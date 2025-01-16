@@ -27,7 +27,9 @@ namespace TPVApp
             messageArea = new FlowLayoutPanel
             {
                 Dock = DockStyle.Fill,
-                AutoScroll = true
+                AutoScroll = true,
+                FlowDirection = FlowDirection.TopDown, // Asegura disposición vertical
+                WrapContents = false // Evita que los controles se dispongan en filas
             };
             messageField = new TextBox
             {
@@ -38,6 +40,7 @@ namespace TPVApp
             Controls.Add(messageArea);
             Controls.Add(messageField);
         }
+
 
         private void MessageField_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -114,30 +117,28 @@ namespace TPVApp
                 Text = message,
                 AutoSize = true,
                 MaximumSize = new System.Drawing.Size(200, 0),
-                Padding = new Padding(10)
+                Padding = new Padding(10),
+                BackColor = isSentByUser ? System.Drawing.Color.LightBlue : System.Drawing.Color.LightGreen,
+                ForeColor = System.Drawing.Color.Black,
+                TextAlign = System.Drawing.ContentAlignment.MiddleLeft,
+                Margin = new Padding(5) // Espaciado entre mensajes
             };
-
-            if (isSentByUser)
-            {
-                messageLabel.BackColor = System.Drawing.Color.LightBlue;
-                messageLabel.ForeColor = System.Drawing.Color.Black;
-                messageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            }
-            else
-            {
-                messageLabel.BackColor = System.Drawing.Color.LightGreen;
-                messageLabel.ForeColor = System.Drawing.Color.Black;
-                messageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            }
 
             FlowLayoutPanel messageBox = new FlowLayoutPanel
             {
-                FlowDirection = isSentByUser ? FlowDirection.RightToLeft : FlowDirection.LeftToRight,
-                Dock = DockStyle.Top
+                FlowDirection = FlowDirection.LeftToRight,
+                AutoSize = true,
+                WrapContents = false,
+                Padding = new Padding(0)
             };
+
             messageBox.Controls.Add(messageLabel);
             messageArea.Controls.Add(messageBox);
+            messageArea.ScrollControlIntoView(messageBox); // Desplaza automáticamente al último mensaje
         }
+
+
+
     }
 }
 
