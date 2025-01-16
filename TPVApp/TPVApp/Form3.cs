@@ -28,8 +28,8 @@ namespace TPVApp
             {
                 Dock = DockStyle.Fill,
                 AutoScroll = true,
-                FlowDirection = FlowDirection.TopDown, // Asegura disposición vertical
-                WrapContents = false // Evita que los controles se dispongan en filas
+                FlowDirection = FlowDirection.TopDown, 
+                WrapContents = false 
             };
             messageField = new TextBox
             {
@@ -44,7 +44,7 @@ namespace TPVApp
 
         private void MessageField_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13) // Enter key
+            if (e.KeyChar == (char)13) 
             {
                 HandleSendMessage();
             }
@@ -55,8 +55,8 @@ namespace TPVApp
             string message = messageField.Text;
             if (!string.IsNullOrEmpty(message))
             {
-                AddMessage(message, true); // Show sent message
-                SendMessage(message); // Send message to server
+                AddMessage(message, true); 
+                SendMessage(message); 
                 messageField.Clear();
             }
         }
@@ -88,7 +88,6 @@ namespace TPVApp
                 string incomingMessage;
                 while ((incomingMessage = inReader.ReadLine()) != null)
                 {
-                    // Update UI on the UI thread
                     Invoke((MethodInvoker)delegate
                     {
                         AddMessage(incomingMessage, false);
@@ -105,8 +104,8 @@ namespace TPVApp
         {
             if (outWriter != null)
             {
-                outWriter.WriteLine(message); // Enviar el mensaje al servidor usando WriteLine
-                outWriter.Flush(); // Asegúrate de que el mensaje se envíe inmediatamente
+                outWriter.WriteLine(message); 
+                outWriter.Flush(); 
             }
         }
 
@@ -121,7 +120,7 @@ namespace TPVApp
                 BackColor = isSentByUser ? System.Drawing.Color.LightBlue : System.Drawing.Color.LightGreen,
                 ForeColor = System.Drawing.Color.Black,
                 TextAlign = System.Drawing.ContentAlignment.MiddleLeft,
-                Margin = new Padding(5) // Espaciado entre mensajes
+                Margin = new Padding(5) 
             };
 
             FlowLayoutPanel messageBox = new FlowLayoutPanel
@@ -134,7 +133,7 @@ namespace TPVApp
 
             messageBox.Controls.Add(messageLabel);
             messageArea.Controls.Add(messageBox);
-            messageArea.ScrollControlIntoView(messageBox); // Desplaza automáticamente al último mensaje
+            messageArea.ScrollControlIntoView(messageBox); 
         }
 
 

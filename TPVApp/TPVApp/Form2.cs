@@ -51,6 +51,7 @@ namespace TPVApp
             dataTextBox.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             datainfo = dataGridView1.CurrentRow.Cells[2].ToString();
 
+
             prezioTotalaTextBox.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             prezioainfo = dataGridView1.CurrentRow.Cells[3].Value.ToString();
         }
@@ -69,34 +70,26 @@ namespace TPVApp
         {
             try
             {
-                // Ruta del escritorio del usuario
                 string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-                // Crear nombre del archivo PDF
                 string filePath = Path.Combine(desktopPath, "Cuenta_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".pdf");
 
-                // Crear documento PDF
                 Document document = new Document();
                 PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
 
-                // Abrir el documento para agregar contenido
                 document.Open();
 
-                // Título
                 Paragraph title = new Paragraph("******* Charlie's *******", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16));
                 title.Alignment = Element.ALIGN_CENTER;
                 document.Add(title);
 
-                // Información general
                 document.Add(new Paragraph($"Mahaia: {mahaiaTextBox.Text}"));
                 document.Add(new Paragraph($"Data: {dataTextBox.Text}"));
                 document.Add(new Paragraph("-------------------------------------"));
 
-                // Tabla
                 PdfPTable table = new PdfPTable(3);
                 table.WidthPercentage = 100;
 
-                // Encabezado de la tabla
                 table.AddCell("Produktua");
                 table.AddCell("Kantitatea");
                 table.AddCell("Prezioa");
@@ -115,17 +108,13 @@ namespace TPVApp
                     }
                 }
 
-                // Agregar la tabla al documento
                 document.Add(table);
 
-                // Totales
                 document.Add(new Paragraph("-------------------------------------"));
                 document.Add(new Paragraph($"Totala: {prezioTotalaTextBox.Text}"));
 
-                // Cerrar el documento
                 document.Close();
 
-                // Mostrar mensaje de éxito
                 MessageBox.Show($"PDF generado con éxito: {filePath}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
