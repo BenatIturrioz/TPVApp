@@ -1,6 +1,8 @@
-﻿namespace TPVApp
+﻿using System;
+
+namespace TPVApp
 {
-    partial class Form3
+    partial class Form6
     {
         /// <summary>
         /// Required designer variable.
@@ -30,19 +32,19 @@
         {
             this.SuspendLayout();
             // 
-            // Form3
+            // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(214)))), ((int)(((byte)(203)))));
-            this.ClientSize = new System.Drawing.Size(978, 477);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form3";
-            this.Text = "Form3";
-            this.Load += new System.EventHandler(this.Form3_Load);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "Form6";
+            this.Text = "Form6";
+            this.Load += new System.EventHandler(this.Form6_Load);
             this.ResumeLayout(false);
 
         }
+
 
         #endregion
     }

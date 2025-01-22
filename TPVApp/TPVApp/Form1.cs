@@ -20,13 +20,6 @@ namespace TPVApp
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
         private void erregistroakGorde(string ErabiltzaileIzena, string mensaje)
         {
             string carpeta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Registroak");
@@ -94,6 +87,16 @@ namespace TPVApp
             {
                 MessageBox.Show("Saioa hasterakoan arazoa: " + ex.Message, "Arazoa", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pasahitzaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

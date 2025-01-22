@@ -14,8 +14,12 @@
 		<property name="connection.release_mode">on_close</property>
 
 		<!-- Mapeo de clases -->
+		<mapping assembly="TPVApp" />
 		<mapping resource="Eskaera.hbm.xml" />
 		<mapping resource="ProduktuEskaera.hbm.xml" />
+		<mapping resource="Mahaia.hbm.xml" />
+		<mapping resource="Produktua.hbm.xml" />
+		<mapping resource="Erabiltzailea.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>
 

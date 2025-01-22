@@ -1,34 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NHibernate;
-using System.Windows.Forms;
+﻿using NHibernate;
+using NHibernate.Cfg;
+using System;
 
-namespace TPVApp.Dominio
+public static class NH
 {
-    internal class NH
+    private static ISessionFactory _sessionFactory;
+
+    public static ISessionFactory SessionFactory
     {
-        private static NHibernate.Cfg.Configuration myConfiguration;
-        private static ISessionFactory mySessionFactory;
-
-        public static void InitializeNHibernate()
+        get
         {
-
-            try
+            // Verificar si la fábrica de sesiones ya está configurada
+            if (_sessionFactory == null)
             {
-                myConfiguration = new NHibernate.Cfg.Configuration();
-                myConfiguration.Configure(); 
-                myConfiguration.AddAssembly(typeof(Eskaera).Assembly);
-                myConfiguration.AddAssembly(typeof(ProduktuEskaera).Assembly);  
-
-                mySessionFactory = myConfiguration.BuildSessionFactory();
+                try
+                {
+                    var configuration = new Configuration();
+                    configuration.Configure(); // Carga la configuración desde hibernate.cfg.xml
+                    _sessionFactory = configuration.BuildSessionFactory();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error al configurar NHibernate: {ex.Message}");
+                    throw; // Lanza la excepción para que pueda ser manejada por el código superior
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al configurar NHibernate: " + ex.Message);
-            }
+            return _sessionFactory;
         }
+    }
+
+    public static ISession OpenSession()
+    {
+        return SessionFactory.OpenSession(); // Abre una nueva sesión
+    }
+
+    // Método para liberar recursos de la fábrica de sesiones cuando ya no se necesite
+    public static void Dispose()
+    {
+        _sessionFactory?.Dispose();
     }
 }

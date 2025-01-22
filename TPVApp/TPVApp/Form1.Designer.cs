@@ -37,10 +37,13 @@
             // 
             // erabiltzaileaTextBox
             // 
-            this.erabiltzaileaTextBox.Location = new System.Drawing.Point(1142, 670);
+            this.erabiltzaileaTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.erabiltzaileaTextBox.Location = new System.Drawing.Point(761, 429);
+            this.erabiltzaileaTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.erabiltzaileaTextBox.Name = "erabiltzaileaTextBox";
-            this.erabiltzaileaTextBox.Size = new System.Drawing.Size(247, 31);
+            this.erabiltzaileaTextBox.Size = new System.Drawing.Size(166, 22);
             this.erabiltzaileaTextBox.TabIndex = 0;
+            this.erabiltzaileaTextBox.Text = "Erabiltzailea";
             // 
             // contextMenuStrip1
             // 
@@ -50,29 +53,38 @@
             // 
             // pasahitzaTextBox
             // 
-            this.pasahitzaTextBox.Location = new System.Drawing.Point(1142, 749);
+            this.pasahitzaTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pasahitzaTextBox.Location = new System.Drawing.Point(761, 479);
+            this.pasahitzaTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.pasahitzaTextBox.Name = "pasahitzaTextBox";
-            this.pasahitzaTextBox.Size = new System.Drawing.Size(247, 31);
+            this.pasahitzaTextBox.Size = new System.Drawing.Size(166, 22);
             this.pasahitzaTextBox.TabIndex = 2;
+            this.pasahitzaTextBox.Text = "Pasahitza";
+            this.pasahitzaTextBox.TextChanged += new System.EventHandler(this.pasahitzaTextBox_TextChanged);
             // 
             // saioaHasiButton
             // 
-            this.saioaHasiButton.Location = new System.Drawing.Point(1189, 839);
+            this.saioaHasiButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
+            this.saioaHasiButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.saioaHasiButton.Location = new System.Drawing.Point(761, 537);
+            this.saioaHasiButton.Margin = new System.Windows.Forms.Padding(2);
             this.saioaHasiButton.Name = "saioaHasiButton";
-            this.saioaHasiButton.Size = new System.Drawing.Size(144, 49);
+            this.saioaHasiButton.Size = new System.Drawing.Size(166, 31);
             this.saioaHasiButton.TabIndex = 3;
             this.saioaHasiButton.Text = "Saioa hasi";
-            this.saioaHasiButton.UseVisualStyleBackColor = true;
+            this.saioaHasiButton.UseVisualStyleBackColor = false;
             this.saioaHasiButton.Click += new System.EventHandler(this.saioaHasiButton_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2278, 1137);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(214)))), ((int)(((byte)(203)))));
+            this.ClientSize = new System.Drawing.Size(1393, 703);
             this.Controls.Add(this.saioaHasiButton);
             this.Controls.Add(this.pasahitzaTextBox);
             this.Controls.Add(this.erabiltzaileaTextBox);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

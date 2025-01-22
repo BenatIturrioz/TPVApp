@@ -1,12 +1,11 @@
 ﻿<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="TPVApp" namespace="TPVApp.Dominio">
-	<class name="ProduktuEskaera" table="eskaeraproduktua">
-		<id name="Id" column="id">
+	<class name="TPVApp.Dominio.ProduktuEskaera" table="eskaeraproduktua">
+		<id name="Id" column="id" type="int">
 			<generator class="identity" />
 		</id>
-		<property name="Eskaera_id" column="eskaera_id" />
-		<property name="ProduktuaIzena" column="produktua_izena" />
-		<property name="ProduktuaKop" column="produktua_kop" />
-		<property name="Prezioa" column="prezioa" />
-		<many-to-one name="Eskaera" class="Eskaera" column="eskaera_id" />
+		<property name="ErreserbaId" column="erreserba_id" type="int" />
+		<property name="Produktu_izena" column="produktu_izena" type="string" />
+		<property name="ProduktuaKop" column="produktuaKop" type="int" />
+		<property name="Prezioa" column="prezioa" type="float"/>
 	</class>
 </hibernate-mapping>

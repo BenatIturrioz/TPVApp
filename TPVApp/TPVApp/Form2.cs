@@ -6,8 +6,7 @@ using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.IO;
 using TPVApp.Dominio;
-
-
+using System.Linq;
 
 namespace TPVApp
 {
@@ -24,7 +23,7 @@ namespace TPVApp
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             erabiltzaileaId = ErabiltzaileaId;
-            NH.InitializeNHibernate();
+         
         }
        
         private void Form2_Load(object sender, EventArgs e)
@@ -70,8 +69,8 @@ namespace TPVApp
         {
             try
             {
+                // Generar el PDF
                 string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
                 string filePath = Path.Combine(desktopPath, "Cuenta_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".pdf");
 
                 Document document = new Document();
@@ -116,13 +115,51 @@ namespace TPVApp
                 document.Close();
 
                 MessageBox.Show($"PDF generado con éxito: {filePath}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Marcar la eskaera como ordainduta en la base de datos
+                using (var session = NH.OpenSession())
+                {
+                    using (var transaction = session.BeginTransaction())
+                    {
+                        try
+                        {
+                            int erreserbaId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value); // Convertir el ID
+
+                            // Buscar la eskaera por ID
+                            var eskaera = session.Query<Eskaera>().FirstOrDefault(f => f.Erreserba_id == erreserbaId);
+
+                            if (eskaera != null)
+                            {
+                                eskaera.Ordaindua = true; // Marcar como pagada
+                                session.Update(eskaera); // Actualizar en la base de datos
+                                transaction.Commit(); // Confirmar cambios
+                                MessageBox.Show("La eskaera se ha marcado como pagada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encontró la eskaera con el ID proporcionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("El ID de la eskaera debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        catch (Exception ex)
+                        {
+                            transaction.Rollback(); // Revertir transacción en caso de error
+                            MessageBox.Show($"Error al actualizar la eskaera: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                    }
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al generar el PDF: {ex.Message}\n{ex.StackTrace}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -137,6 +174,17 @@ namespace TPVApp
         {
             Form3 form3 = new Form3();
             form3.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Eskaera eskaera = new Eskaera();
+            eskaera.Langilea_id = erabiltzaileaId;
+            eskaera.Erreserba_id = ProduktuEskaera.SiguienteErreserbaId();
+           
+            Form4 form4 = new Form4(eskaera);
+            form4.Show();
+            this.Close();
         }
     }
 }
