@@ -65,7 +65,7 @@ namespace TPVApp
         {
             try
             {
-                clientSocket = new TcpClient("localhost", 5555);
+                clientSocket = new TcpClient("192.168.115.188", 5555);
                 NetworkStream networkStream = clientSocket.GetStream();
                 inReader = new StreamReader(networkStream);
                 outWriter = new StreamWriter(networkStream, System.Text.Encoding.UTF8);
