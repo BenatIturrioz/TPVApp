@@ -191,13 +191,10 @@ namespace TPVApp
 
         private void button5_Click(object sender, EventArgs e)
         {
-            // Verificar si se ha seleccionado una fila en el DataGridView
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Obtener el ID de la Eskaera seleccionada (suponiendo que el ID está en la primera columna de dataGridView1)
                 int eskaeraId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
 
-                // Abrir la sesión de NHibernate
                 using (var session = NH.OpenSession())
                 {
                     // Buscar la Eskaera por ID en la base de datos
@@ -209,6 +206,7 @@ namespace TPVApp
                         // Abrir el Form5 con la Eskaera seleccionada
                         Form5 form5 = new Form5(eskaera);
                         form5.Show();
+                        this.Close();
                     }
                     else
                     {

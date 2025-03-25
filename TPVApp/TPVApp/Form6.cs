@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NHibernate;
 using TPVApp.Dominio;
 
 namespace TPVApp
@@ -28,6 +29,7 @@ namespace TPVApp
 
         private void Form6_Load(object sender, EventArgs e)
         {
+            // Obtener los productos disponibles para la selección
             List<Produktua> productos = Produktua.ProduktuaErakutsi(mota);
 
             // Crear un DataGridView
@@ -52,10 +54,23 @@ namespace TPVApp
             };
             dataGridView.Columns.Add(seleccionarCantidadColumn);
 
-            // Agregar filas con los datos de los productos
-            foreach (var producto in productos)
+            // Recuperar las cantidades seleccionadas de la base de datos
+            using (ISession session = NH.OpenSession())
             {
-                dataGridView.Rows.Add(producto.Id, producto.Izena, producto.ErosketaPrezioa, producto.Kantitatea, 0);
+                var eskaeraProductos = session.QueryOver<ProduktuEskaera>()
+                                              .Where(pe => pe.ErreserbaId == eskaera.Erreserba_id)
+                                              .List<ProduktuEskaera>();
+
+                // Agregar las filas con los productos y sus cantidades seleccionadas previamente
+                foreach (var producto in productos)
+                {
+                    // Buscar si el producto ya fue seleccionado anteriormente
+                    var productoEskaera = eskaeraProductos.FirstOrDefault(pe => pe.Produktu_izena == producto.Izena);
+                    int cantidadSeleccionada = productoEskaera?.ProduktuaKop ?? 0; // Si no existe, usar 0
+
+                    // Agregar la fila correspondiente con la cantidad seleccionada
+                    dataGridView.Rows.Add(producto.Id, producto.Izena, producto.ErosketaPrezioa, producto.Kantitatea, cantidadSeleccionada);
+                }
             }
 
             // Manejo de validación de datos en el DataGridView
@@ -105,9 +120,10 @@ namespace TPVApp
                     int productoId = Convert.ToInt32(row.Cells["Id"].Value);
                     string nombre = row.Cells["Izena"].Value.ToString();
                     float prezioa = Convert.ToSingle(row.Cells["ErosketaPrezioa"].Value);
-                    int cantidadElegida = Convert.ToInt32(row.Cells["SeleccionarCantidad"].Value);
-
-                    if (cantidadElegida > 0)
+                    int cantidadElegida = row.Cells["SeleccionarCantidad"].Value != null
+                                ? Convert.ToInt32(row.Cells["SeleccionarCantidad"].Value)
+                                : 0;
+                    if (cantidadElegida >= 0)
                     {
                         seleccionResumen.AppendLine($"- {nombre} (ID: {productoId}): {cantidadElegida} unidades");
                         ProduktuEskaera.gordeProduktuEskaera(eskaera, nombre, cantidadElegida, prezioa);
@@ -118,12 +134,12 @@ namespace TPVApp
                 Form5 form5 = new Form5(eskaera); // Pasar el objeto eskaera al Form5
                 form5.Show();
                 this.Close();
-
             };
 
             // Agregar el botón al formulario
             this.Controls.Add(confirmarButton);
         }
+
 
     }
 
