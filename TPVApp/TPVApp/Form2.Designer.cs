@@ -30,6 +30,8 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +43,6 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -61,6 +62,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.label3);
@@ -81,6 +83,32 @@
             this.groupBox1.Text = "Eskaera";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Red;
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.button6.Location = new System.Drawing.Point(32, 260);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(190, 63);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "Eskaera ezabatu";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.button5.Location = new System.Drawing.Point(31, 158);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(190, 63);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Eskaera modifikatu";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
@@ -97,7 +125,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 388);
+            this.label3.Location = new System.Drawing.Point(27, 488);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 20);
@@ -107,17 +135,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 296);
+            this.label2.Location = new System.Drawing.Point(27, 418);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Data";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 209);
+            this.label1.Location = new System.Drawing.Point(28, 354);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 20);
@@ -126,7 +155,7 @@
             // 
             // mahaiaTextBox
             // 
-            this.mahaiaTextBox.Location = new System.Drawing.Point(24, 231);
+            this.mahaiaTextBox.Location = new System.Drawing.Point(25, 376);
             this.mahaiaTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.mahaiaTextBox.Name = "mahaiaTextBox";
             this.mahaiaTextBox.Size = new System.Drawing.Size(196, 26);
@@ -134,7 +163,7 @@
             // 
             // dataTextBox
             // 
-            this.dataTextBox.Location = new System.Drawing.Point(24, 319);
+            this.dataTextBox.Location = new System.Drawing.Point(24, 441);
             this.dataTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.dataTextBox.Name = "dataTextBox";
             this.dataTextBox.Size = new System.Drawing.Size(196, 26);
@@ -142,7 +171,7 @@
             // 
             // prezioTotalaTextBox
             // 
-            this.prezioTotalaTextBox.Location = new System.Drawing.Point(24, 410);
+            this.prezioTotalaTextBox.Location = new System.Drawing.Point(25, 510);
             this.prezioTotalaTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.prezioTotalaTextBox.Name = "prezioTotalaTextBox";
             this.prezioTotalaTextBox.Size = new System.Drawing.Size(196, 26);
@@ -152,10 +181,10 @@
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.button2.Location = new System.Drawing.Point(30, 504);
+            this.button2.Location = new System.Drawing.Point(31, 568);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(188, 112);
+            this.button2.Size = new System.Drawing.Size(189, 69);
             this.button2.TabIndex = 0;
             this.button2.Text = "Faktura sortu";
             this.button2.UseVisualStyleBackColor = false;
@@ -199,19 +228,6 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.button5.Location = new System.Drawing.Point(31, 117);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(190, 63);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Eskaera modifikatu";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -252,5 +268,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnEditarEskaera;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }

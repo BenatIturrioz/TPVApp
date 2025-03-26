@@ -220,6 +220,99 @@ namespace TPVApp
             }
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int eskaeraId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+
+                DialogResult result = MessageBox.Show(
+                    "¿Estás seguro de que deseas eliminar esta Eskaera?",
+                    "Confirmar Eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        bool eliminacionExitosa = false;
+
+                        using (var session = NH.OpenSession())
+                        using (var transaction = session.BeginTransaction())
+                        {
+                            // Recuperamos los productos asociados a la Eskaera
+                            var produktuakEskaera = session.Query<ProduktuEskaera>()
+                                .Where(pe => pe.ErreserbaId == eskaeraId)
+                                .ToList();
+
+                            // Iteramos sobre los productos de la Eskaera
+                            foreach (var produktuaEskaera in produktuakEskaera)
+                            {
+                                // Recuperamos el producto
+                                var produktua = session.Query<Produktua>()
+                                    .FirstOrDefault(p => p.Izena == produktuaEskaera.Produktu_izena);
+
+                                if (produktua != null)
+                                {
+                                    // Aumentamos la cantidad del producto en stock
+                                    produktua.Kantitatea += produktuaEskaera.ProduktuaKop;
+                                    session.Update(produktua);  // Actualizamos el producto
+                                }
+
+                                session.Delete(produktuaEskaera);
+                            }
+
+                            // Ahora, eliminamos la Eskaera en sí
+                            var eskaera = session.Query<Eskaera>()
+                                .FirstOrDefault(eskaeraItem => eskaeraItem.Erreserba_id == eskaeraId);
+
+                            if (eskaera != null)
+                            {
+                                session.Delete(eskaera);  // Eliminamos la Eskaera
+                                session.Flush();  // Forzamos la eliminación en la base de datos
+                                transaction.Commit();  // Confirmamos la transacción
+                                eliminacionExitosa = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encontró la Eskaera.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+
+                        if (eliminacionExitosa)
+                        {
+                            MessageBox.Show("Eskaera eliminada y stock actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Limpiamos las selecciones y actualizamos las tablas
+                            dataGridView1.ClearSelection();
+                            dataGridView2.Rows.Clear(); // Limpiamos el DataGridView de los productos
+                            Eskaera.EskaerakErakutsi(dataGridView1); // Actualizamos el DataGridView de Eskaera
+                            dataGridView2.Rows.Clear(); // Aseguramos que el DataGridView de productos está limpio
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al eliminar la Eskaera: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una Eskaera en la tabla para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
     }
+
+
+
+
+
 }
