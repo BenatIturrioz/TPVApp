@@ -309,6 +309,11 @@ namespace TPVApp
             }
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            eguraldia eguraldia = new eguraldia();
+            eguraldia.Show();
+        }
     }
 
 

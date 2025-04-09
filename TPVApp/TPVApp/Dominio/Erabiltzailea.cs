@@ -28,7 +28,7 @@ namespace TPVApp.Dominio
                 using (MySqlConnection connection = sqlConnection.GetConnection())
                 {
                     connection.Open();
-                    string query = "SELECT id, langilea_mota FROM erronka2.erabiltzailea WHERE erabiltzaileIzena = @erabiltzaile AND pasahitza = @pasahitza";
+                    string query = "SELECT id, langilea_mota FROM erronka1.erabiltzailea WHERE erabiltzaileIzena = @erabiltzaile AND pasahitza = @pasahitza";
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@erabiltzaile", this.ErabiltzaileIzena);

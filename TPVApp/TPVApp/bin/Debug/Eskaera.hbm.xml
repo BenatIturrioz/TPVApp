@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="TPVApp" namespace="TPVApp.Dominio">
+	<class name="TPVApp.Dominio.Eskaera" table="eskaera">
+		<id name="Id" column="id" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="Langilea_id" column="langilea_id" type="int"/>
+		<property name="Erreserba_id" column="erreserba_id" type="int"/>
+		<property name="Mahaia" column="mahaia_id" type="int"/>
+		<property name="Data" column="data" type="datetime"/>
+		<property name="PrezioTotala" column="prezioTotala" type="float"/>
+		<property name="Ordaindua" column="ordaindua" type="bool"/>
+	</class>
+</hibernate-mapping>
+

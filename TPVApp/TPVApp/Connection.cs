@@ -9,7 +9,7 @@ namespace TPVApp
 {
     internal class Connection
     {
-        private readonly string connectionString = "server='192.168.115.158';port='3306';user id='2Taldea'; password = '2Taldea'; database = 'erronka2';SslMode = 'none'";
+        private readonly string connectionString = "server='localhost';port='3306';user id='root'; password = '1WMG2023'; database = 'erronka1';SslMode = 'none'";
 
         public MySqlConnection GetConnection()
         {
