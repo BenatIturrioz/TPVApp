@@ -5,13 +5,14 @@ using System.Net;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Drawing;
 
 namespace TPVApp
 {
     public partial class eguraldia : Form
     {
         private string localFile = "downloaded_output.xml";
-        private RichTextBox richTextBox;
+        private Panel panelResultados;
 
         public eguraldia()
         {
@@ -21,28 +22,23 @@ namespace TPVApp
 
         private void eguraldia_Load(object sender, EventArgs e)
         {
-            // Botón para descargar
             Button btnDownload = new Button
             {
                 Text = "Descargar Predicción",
-                Location = new System.Drawing.Point(20, 20),
-                Size = new System.Drawing.Size(180, 40)
+                Location = new Point(20, 20),
+                Size = new Size(200, 40)
             };
             btnDownload.Click += BtnDownload_Click;
             this.Controls.Add(btnDownload);
 
-            // RichTextBox para mostrar el tiempo
-            richTextBox = new RichTextBox
+            panelResultados = new Panel
             {
-                Name = "richTextBoxTiempo",
-                Location = new System.Drawing.Point(20, 80),
-                Size = new System.Drawing.Size(this.ClientSize.Width - 40, this.ClientSize.Height - 100),
-                Multiline = true,
-                ReadOnly = true,
-                Font = new System.Drawing.Font("Segoe UI", 11),
+                Location = new Point(20, 80),
+                AutoScroll = true,
+                Size = new Size(this.ClientSize.Width - 40, this.ClientSize.Height - 100),
                 Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right
             };
-            this.Controls.Add(richTextBox);
+            this.Controls.Add(panelResultados);
         }
 
         private void BtnDownload_Click(object sender, EventArgs e)
@@ -67,7 +63,7 @@ namespace TPVApp
                     responseStream.CopyTo(fs);
                 }
 
-                MostrarPrediccion(localFile);
+                MostrarPrediccionVisual(localFile);
             }
             catch (Exception ex)
             {
@@ -75,24 +71,25 @@ namespace TPVApp
             }
         }
 
-        private void MostrarPrediccion(string path)
+        private void MostrarPrediccionVisual(string path)
         {
             try
             {
-                XDocument doc = XDocument.Load(path);
-                StringBuilder sb = new StringBuilder();
+                panelResultados.Controls.Clear();
 
+                XDocument doc = XDocument.Load(path);
                 var dias = doc.Descendants("dia");
+
+                int y = 10;
 
                 foreach (var dia in dias)
                 {
                     string fecha = dia.Element("fecha")?.Value;
-                    string temperatura = dia.Element("temperatura_media")?.Value;
+                    string temperaturaStr = dia.Element("temperatura_media")?.Value;
                     string precipitacion = dia.Element("prob_precipitacion_media")?.Value;
+                    double temperatura = double.TryParse(temperaturaStr, out double t) ? t : 0;
 
-                    sb.AppendLine($"📅 {fecha}");
-                    sb.AppendLine($"🌡️ Temp: {temperatura} °C");
-                    sb.AppendLine($"☔ Lluvia: {Math.Round(Convert.ToDouble(precipitacion))}%");
+                    string descripcion = $"📅 {fecha}\n🌡️ Temp: {temperatura} °C\n☔ Lluvia: {Math.Round(Convert.ToDouble(precipitacion))}%\n";
 
                     var cielos = dia.Elements("estado_cielo")
                         .Where(x => x.Attribute("periodo") != null)
@@ -102,24 +99,49 @@ namespace TPVApp
                     foreach (var grupo in cielos)
                     {
                         string periodo = grupo.Key;
-                        string descripcion = grupo.FirstOrDefault()?.Value;
-                        sb.AppendLine($"☁️ Cielo ({periodo}): {descripcion}");
+                        string desc = grupo.FirstOrDefault()?.Value;
+                        descripcion += $"☁️ Cielo ({periodo}): {desc}\n";
                     }
 
-                    // Si hay un único <estado_cielo> sin periodo
                     var cieloUnico = dia.Elements("estado_cielo")
                         .Where(x => x.Attribute("periodo") == null)
                         .FirstOrDefault();
-
                     if (cieloUnico != null)
                     {
-                        sb.AppendLine($"☁️ Cielo: {cieloUnico.Value}");
+                        descripcion += $"☁️ Cielo: {cieloUnico.Value}\n";
                     }
 
-                    sb.AppendLine(new string('-', 40));
-                }
+                    // Crear RichTextBox
+                    RichTextBox txt = new RichTextBox
+                    {
+                        Text = descripcion,
+                        Location = new Point(80, y),
+                        Size = new Size(panelResultados.Width - 100, 110),
+                        ReadOnly = true,
+                        Font = new Font("Segoe UI", 10),
+                        BorderStyle = BorderStyle.None,
+                        BackColor = SystemColors.Control
+                    };
 
-                richTextBox.Text = sb.ToString();
+                    // Seleccionar imagen según temperatura
+                    PictureBox img = new PictureBox
+                    {
+                        Size = new Size(60, 60),
+                        Location = new Point(10, y + 20),
+                        SizeMode = PictureBoxSizeMode.Zoom
+                    };
+
+                    if (temperatura >= 20)
+                        img.Image = Image.FromFile("Resources/calor.png"); // si hace calor
+                    else
+                        img.Image = Image.FromFile("Resources/frio.png");
+
+                    // Añadir al panel
+                    panelResultados.Controls.Add(img);
+                    panelResultados.Controls.Add(txt);
+
+                    y += 130;
+                }
             }
             catch (Exception ex)
             {
