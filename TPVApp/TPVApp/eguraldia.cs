@@ -6,6 +6,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Drawing;
+using System.Globalization;
+
 
 namespace TPVApp
 {
@@ -87,9 +89,12 @@ namespace TPVApp
                     string fecha = dia.Element("fecha")?.Value;
                     string temperaturaStr = dia.Element("temperatura_media")?.Value;
                     string precipitacion = dia.Element("prob_precipitacion_media")?.Value;
-                    double temperatura = double.TryParse(temperaturaStr, out double t) ? t : 0;
+                    double precipitacionVal = double.TryParse(precipitacion, NumberStyles.Any, CultureInfo.InvariantCulture, out double p) ? p : 0;
+                    double temperatura = double.TryParse(temperaturaStr, NumberStyles.Any, CultureInfo.InvariantCulture, out double t) ? t : 0;
 
-                    string descripcion = $"📅 {fecha}\n🌡️ Temp: {temperatura} °C\n☔ Lluvia: {Math.Round(Convert.ToDouble(precipitacion))}%\n";
+
+
+                    string descripcion = $"📅 {fecha}\n🌡️ Temp: {temperatura} °C\n☔ Lluvia: {Math.Round(precipitacionVal)}%\n";
 
                     var cielos = dia.Elements("estado_cielo")
                         .Where(x => x.Attribute("periodo") != null)
@@ -130,11 +135,27 @@ namespace TPVApp
                         Location = new Point(10, y + 20),
                         SizeMode = PictureBoxSizeMode.Zoom
                     };
-
+                    string rutaImagenCalor = Path.Combine(Application.StartupPath, "Resources", "calor.png");
+                    string rutaImagenFrio = Path.Combine(Application.StartupPath, "Resources", "frio.png");
                     if (temperatura >= 20)
-                        img.Image = Image.FromFile("Resources/calor.png"); // si hace calor
+                        img.Image = Image.FromFile(rutaImagenCalor);
                     else
-                        img.Image = Image.FromFile("Resources/frio.png");
+                        img.Image = Image.FromFile(rutaImagenFrio);
+
+                    PictureBox imgLluvia = new PictureBox
+                    {
+                        Size = new Size(60, 60),
+                        Location = new Point(10, y + 80), // debajo de la otra imagen
+                        SizeMode = PictureBoxSizeMode.Zoom
+                    };
+                    string rutaLluvia = Path.Combine(Application.StartupPath, "Resources", "lluvia.png");
+                    string rutaSeco = Path.Combine(Application.StartupPath, "Resources", "seco.png");
+                    if (precipitacionVal > 50)
+                        imgLluvia.Image = Image.FromFile(rutaLluvia);
+                    else
+                        imgLluvia.Image = Image.FromFile(rutaSeco);
+
+                    panelResultados.Controls.Add(imgLluvia);
 
                     // Añadir al panel
                     panelResultados.Controls.Add(img);
