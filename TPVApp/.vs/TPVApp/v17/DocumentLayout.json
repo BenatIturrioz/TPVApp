@@ -7,88 +7,12 @@
       "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\eguraldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\eguraldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\eguraldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\eskaera.hbm.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\eskaera.hbm.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\hibernate.cfg.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\hibernate.cfg.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\mahaia.hbm.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\mahaia.hbm.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\produktua.hbm.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\produktua.hbm.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\produktueskaera.hbm.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\produktueskaera.hbm.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\dominio\\nh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\dominio\\nh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\dominio\\produktueskaera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\dominio\\produktueskaera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\dominio\\produktua.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\dominio\\produktua.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\dominio\\faktura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\dominio\\faktura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\dominio\\eskaera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\dominio\\eskaera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\dominio\\erabiltzailea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\dominio\\erabiltzailea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|c:\\users\\benat\\desktop\\gittpvapp\\tpvapp\\tpvapp\\tpvapp\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\tpvapp\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|c:\\users\\benat\\desktop\\gittpvapp\\tpvapp\\tpvapp\\tpvapp\\eguraldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A6849268-7F67-4CD5-9481-89141956E69B}|TPVApp\\TPVApp.csproj|solutionrelative:tpvapp\\eguraldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -98,31 +22,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "packages.config",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\packages.config",
-              "RelativeDocumentMoniker": "TPVApp\\packages.config",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\packages.config",
-              "RelativeToolTip": "TPVApp\\packages.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-04-09T14:37:09.772Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Produktua.hbm.xml",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Produktua.hbm.xml",
-              "RelativeDocumentMoniker": "TPVApp\\Produktua.hbm.xml",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Produktua.hbm.xml",
-              "RelativeToolTip": "TPVApp\\Produktua.hbm.xml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-04-09T14:37:07.76Z"
+              "DocumentIndex": 1,
+              "Title": "Connection.cs",
+              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Connection.cs",
+              "RelativeDocumentMoniker": "TPVApp\\Connection.cs",
+              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Connection.cs",
+              "RelativeToolTip": "TPVApp\\Connection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T06:33:08.937Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -130,235 +43,24 @@
               "Title": "eguraldia.cs",
               "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\eguraldia.cs",
               "RelativeDocumentMoniker": "TPVApp\\eguraldia.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\eguraldia.cs",
-              "RelativeToolTip": "TPVApp\\eguraldia.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAgwJEAAAAVAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\eguraldia.cs*",
+              "RelativeToolTip": "TPVApp\\eguraldia.cs*",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAYwFsAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:26:48.801Z",
+              "WhenOpened": "2025-04-23T06:32:15.073Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Mahaia.hbm.xml",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Mahaia.hbm.xml",
-              "RelativeDocumentMoniker": "TPVApp\\Mahaia.hbm.xml",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Mahaia.hbm.xml",
-              "RelativeToolTip": "TPVApp\\Mahaia.hbm.xml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-04-09T14:37:11.831Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProduktuEskaera.hbm.xml",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\ProduktuEskaera.hbm.xml",
-              "RelativeDocumentMoniker": "TPVApp\\ProduktuEskaera.hbm.xml",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\ProduktuEskaera.hbm.xml",
-              "RelativeToolTip": "TPVApp\\ProduktuEskaera.hbm.xml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-04-09T14:36:58.288Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "NH.cs",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Dominio\\NH.cs",
-              "RelativeDocumentMoniker": "TPVApp\\Dominio\\NH.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Dominio\\NH.cs",
-              "RelativeToolTip": "TPVApp\\Dominio\\NH.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:36:49.22Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\App.config",
-              "RelativeDocumentMoniker": "TPVApp\\App.config",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\App.config",
-              "RelativeToolTip": "TPVApp\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-04-09T14:38:34.24Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "eguraldia.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\eguraldia.cs",
               "RelativeDocumentMoniker": "TPVApp\\eguraldia.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\eguraldia.cs [Dise\u00F1o]",
-              "RelativeToolTip": "TPVApp\\eguraldia.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\eguraldia.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "TPVApp\\eguraldia.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:24:57.892Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "hibernate.cfg.xml",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\hibernate.cfg.xml",
-              "RelativeDocumentMoniker": "TPVApp\\hibernate.cfg.xml",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\hibernate.cfg.xml",
-              "RelativeToolTip": "TPVApp\\hibernate.cfg.xml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-04-09T14:37:14.095Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Eskaera.hbm.xml",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Eskaera.hbm.xml",
-              "RelativeDocumentMoniker": "TPVApp\\Eskaera.hbm.xml",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Eskaera.hbm.xml",
-              "RelativeToolTip": "TPVApp\\Eskaera.hbm.xml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-04-09T14:38:29.567Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ProduktuEskaera.cs",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Dominio\\ProduktuEskaera.cs",
-              "RelativeDocumentMoniker": "TPVApp\\Dominio\\ProduktuEskaera.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Dominio\\ProduktuEskaera.cs",
-              "RelativeToolTip": "TPVApp\\Dominio\\ProduktuEskaera.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:36:21.27Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Produktua.cs",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Dominio\\Produktua.cs",
-              "RelativeDocumentMoniker": "TPVApp\\Dominio\\Produktua.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Dominio\\Produktua.cs",
-              "RelativeToolTip": "TPVApp\\Dominio\\Produktua.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:36:18.059Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Faktura.cs",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Dominio\\Faktura.cs",
-              "RelativeDocumentMoniker": "TPVApp\\Dominio\\Faktura.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Dominio\\Faktura.cs",
-              "RelativeToolTip": "TPVApp\\Dominio\\Faktura.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:36:12.143Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Eskaera.cs",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Dominio\\Eskaera.cs",
-              "RelativeDocumentMoniker": "TPVApp\\Dominio\\Eskaera.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Dominio\\Eskaera.cs",
-              "RelativeToolTip": "TPVApp\\Dominio\\Eskaera.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:36:04.667Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Erabiltzailea.cs",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Dominio\\Erabiltzailea.cs",
-              "RelativeDocumentMoniker": "TPVApp\\Dominio\\Erabiltzailea.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Dominio\\Erabiltzailea.cs",
-              "RelativeToolTip": "TPVApp\\Dominio\\Erabiltzailea.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAswBkAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:35:15.443Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Form3.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Form3.cs",
-              "RelativeDocumentMoniker": "TPVApp\\Form3.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Form3.cs [Dise\u00F1o]",
-              "RelativeToolTip": "TPVApp\\Form3.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:26:03.49Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Form2.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Form2.cs",
-              "RelativeDocumentMoniker": "TPVApp\\Form2.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Form2.cs [Dise\u00F1o]",
-              "RelativeToolTip": "TPVApp\\Form2.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T14:52:20.839Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Form2.cs",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Form2.cs",
-              "RelativeDocumentMoniker": "TPVApp\\Form2.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Form2.cs",
-              "RelativeToolTip": "TPVApp\\Form2.cs",
-              "ViewState": "AgIAAC0BAAAAAAAAAADgvx4AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:23:47.721Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Connection.cs",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Connection.cs",
-              "RelativeDocumentMoniker": "TPVApp\\Connection.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Connection.cs",
-              "RelativeToolTip": "TPVApp\\Connection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAACOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:33:43.387Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Form1.cs",
-              "RelativeDocumentMoniker": "TPVApp\\Form1.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Form1.cs",
-              "RelativeToolTip": "TPVApp\\Form1.cs",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAswH8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:34:49.597Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Form6.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Form6.cs",
-              "RelativeDocumentMoniker": "TPVApp\\Form6.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Form6.cs [Dise\u00F1o]",
-              "RelativeToolTip": "TPVApp\\Form6.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:26:02.247Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Form1.cs",
-              "RelativeDocumentMoniker": "TPVApp\\Form1.cs",
-              "ToolTip": "C:\\Users\\benat\\Desktop\\GitTPVApp\\TPVApp\\TPVApp\\TPVApp\\Form1.cs [Dise\u00F1o]",
-              "RelativeToolTip": "TPVApp\\Form1.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T14:52:18.828Z"
+              "WhenOpened": "2025-04-23T06:32:13.622Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

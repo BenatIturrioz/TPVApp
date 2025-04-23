@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.IO;
-using System;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
-using System.IO;
 using TPVApp.Dominio;
 using System.Linq;
 
@@ -23,7 +21,6 @@ namespace TPVApp
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             erabiltzaileaId = ErabiltzaileaId;
-
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -34,7 +31,7 @@ namespace TPVApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Errorea: " + ex.Message);
             }
         }
 
@@ -50,7 +47,6 @@ namespace TPVApp
             dataTextBox.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             datainfo = dataGridView1.CurrentRow.Cells[2].ToString();
 
-
             prezioTotalaTextBox.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             prezioainfo = dataGridView1.CurrentRow.Cells[3].Value.ToString();
         }
@@ -60,18 +56,12 @@ namespace TPVApp
             this.Close();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                // Generar el PDF
                 string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                string filePath = Path.Combine(desktopPath, "Cuenta_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".pdf");
+                string filePath = Path.Combine(desktopPath, "Kontua_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".pdf");
 
                 Document document = new Document();
                 PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
@@ -90,7 +80,7 @@ namespace TPVApp
                 table.WidthPercentage = 100;
 
                 table.AddCell("Produktua");
-                table.AddCell("Kantitatea");
+                table.AddCell("Kopurua");
                 table.AddCell("Prezioa");
 
                 foreach (DataGridViewRow row in dataGridView2.Rows)
@@ -114,63 +104,52 @@ namespace TPVApp
 
                 document.Close();
 
-                MessageBox.Show($"PDF generado con éxito: {filePath}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"PDFa ongi sortu da: {filePath}", "Arrakasta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Marcar la eskaera como ordainduta en la base de datos
                 using (var session = NH.OpenSession())
                 {
                     using (var transaction = session.BeginTransaction())
                     {
                         try
                         {
-                            int erreserbaId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value); // Convertir el ID
-
-                            // Buscar la eskaera por ID
+                            int erreserbaId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
                             var eskaera = session.Query<Eskaera>().FirstOrDefault(f => f.Erreserba_id == erreserbaId);
 
                             if (eskaera != null)
                             {
-                                eskaera.Ordaindua = true; // Marcar como pagada
-                                session.Update(eskaera); // Actualizar en la base de datos
-                                transaction.Commit(); // Confirmar cambios
-                                MessageBox.Show("La eskaera se ha marcado como pagada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                eskaera.Ordaindua = true;
+                                session.Update(eskaera);
+                                transaction.Commit();
+                                MessageBox.Show("Eskaera ordaindutzat markatu da.", "Arrakasta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 Eskaera.EskaerakErakutsi(dataGridView1);
                                 Eskaera.EskaerakErakutsi(dataGridView2);
                             }
                             else
                             {
-                                MessageBox.Show("No se encontró la eskaera con el ID proporcionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Ezin izan da eskaera aurkitu emandako IDarekin.", "Errorea", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         catch (FormatException)
                         {
-                            MessageBox.Show("El ID de la eskaera debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Eskaeraren IDa zenbaki balioduna izan behar da.", "Errorea", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         catch (Exception ex)
                         {
-                            transaction.Rollback(); // Revertir transacción en caso de error
-                            MessageBox.Show($"Error al actualizar la eskaera: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            transaction.Rollback();
+                            MessageBox.Show($"Errorea eskaera eguneratzean: {ex.Message}", "Errorea", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al generar el PDF: {ex.Message}\n{ex.StackTrace}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Errorea PDFa sortzerakoan: {ex.Message}\n{ex.StackTrace}", "Errorea", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        private void button1_Click(object sender, EventArgs e) { }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -197,32 +176,25 @@ namespace TPVApp
 
                 using (var session = NH.OpenSession())
                 {
-                    // Buscar la Eskaera por ID en la base de datos
                     var eskaera = session.Query<Eskaera>()
                                          .FirstOrDefault(eskaeraItem => eskaeraItem.Erreserba_id == eskaeraId);
 
                     if (eskaera != null)
                     {
-                        // Abrir el Form5 con la Eskaera seleccionada
                         Form5 form5 = new Form5(eskaera);
                         form5.Show();
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("No se encontró la Eskaera con el ID proporcionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ezin izan da eskaera aurkitu emandako IDarekin.", "Errorea", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona una Eskaera en el DataGrid para modificar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mesedez, hautatu eskaera bat datagrid-ean aldatzeko.", "Errorea", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -232,8 +204,8 @@ namespace TPVApp
                 int eskaeraId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
 
                 DialogResult result = MessageBox.Show(
-                    "¿Estás seguro de que deseas eliminar esta Eskaera?",
-                    "Confirmar Eliminación",
+                    "Ziur zaude eskaera hau ezabatu nahi duzula?",
+                    "Ezabaketa Berretsi",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning
                 );
@@ -247,65 +219,58 @@ namespace TPVApp
                         using (var session = NH.OpenSession())
                         using (var transaction = session.BeginTransaction())
                         {
-                            // Recuperamos los productos asociados a la Eskaera
                             var produktuakEskaera = session.Query<ProduktuEskaera>()
                                 .Where(pe => pe.ErreserbaId == eskaeraId)
                                 .ToList();
 
-                            // Iteramos sobre los productos de la Eskaera
                             foreach (var produktuaEskaera in produktuakEskaera)
                             {
-                                // Recuperamos el producto
                                 var produktua = session.Query<Produktua>()
                                     .FirstOrDefault(p => p.Izena == produktuaEskaera.Produktu_izena);
 
                                 if (produktua != null)
                                 {
-                                    // Aumentamos la cantidad del producto en stock
                                     produktua.Kantitatea += produktuaEskaera.ProduktuaKop;
-                                    session.Update(produktua);  // Actualizamos el producto
+                                    session.Update(produktua);
                                 }
 
                                 session.Delete(produktuaEskaera);
                             }
 
-                            // Ahora, eliminamos la Eskaera en sí
                             var eskaera = session.Query<Eskaera>()
                                 .FirstOrDefault(eskaeraItem => eskaeraItem.Erreserba_id == eskaeraId);
 
                             if (eskaera != null)
                             {
-                                session.Delete(eskaera);  // Eliminamos la Eskaera
-                                session.Flush();  // Forzamos la eliminación en la base de datos
-                                transaction.Commit();  // Confirmamos la transacción
+                                session.Delete(eskaera);
+                                session.Flush();
+                                transaction.Commit();
                                 eliminacionExitosa = true;
                             }
                             else
                             {
-                                MessageBox.Show("No se encontró la Eskaera.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Ez da eskaera aurkitu.", "Errorea", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
 
                         if (eliminacionExitosa)
                         {
-                            MessageBox.Show("Eskaera eliminada y stock actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            // Limpiamos las selecciones y actualizamos las tablas
+                            MessageBox.Show("Eskaera ezabatu da eta stock-a eguneratu da.", "Arrakasta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             dataGridView1.ClearSelection();
-                            dataGridView2.Rows.Clear(); // Limpiamos el DataGridView de los productos
-                            Eskaera.EskaerakErakutsi(dataGridView1); // Actualizamos el DataGridView de Eskaera
-                            dataGridView2.Rows.Clear(); // Aseguramos que el DataGridView de productos está limpio
+                            dataGridView2.Rows.Clear();
+                            Eskaera.EskaerakErakutsi(dataGridView1);
+                            dataGridView2.Rows.Clear();
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al eliminar la Eskaera: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Errorea eskaera ezabatzerakoan: " + ex.Message, "Errorea", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona una Eskaera en la tabla para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mesedez, hautatu eskaera bat taulan ezabatzeko.", "Abisua", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -314,10 +279,8 @@ namespace TPVApp
             eguraldia eguraldia = new eguraldia();
             eguraldia.Show();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e) { }
+        private void label2_Click(object sender, EventArgs e) { }
     }
-
-
-
-
-
 }

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Drawing;
 using System.Globalization;
-
+using System.Collections.Generic;
 
 namespace TPVApp
 {
@@ -26,7 +26,7 @@ namespace TPVApp
         {
             Button btnDownload = new Button
             {
-                Text = "Descargar Predicción",
+                Text = "Iragarpena Deskargatu",
                 Location = new Point(20, 20),
                 Size = new Size(200, 40)
             };
@@ -69,7 +69,7 @@ namespace TPVApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al descargar: {ex.Message}");
+                MessageBox.Show($"Errorea deskargatzean: {ex.Message}");
             }
         }
 
@@ -78,6 +78,21 @@ namespace TPVApp
             try
             {
                 panelResultados.Controls.Clear();
+
+                // Diccionario de traducción al euskera
+                var traducciones = new Dictionary<string, string>
+                {
+                    {"Muy nuboso con lluvia", "Oso hodeitsu euriarengatik"},
+                    {"Nuboso con lluvia", "Hodeitsu euriarengatik"},
+                    {"Intervalos nubosos con lluvia", "Euri tarteekin hodeitsu"},
+                    {"Nuboso", "Hodeitsu"},
+                    {"Poco nuboso", "Hodei gutxi"},
+                    {"Despejado", "Garbi"},
+                    {"Cubierto", "Estalia"},
+                    {"Intervalos nubosos con tormenta", "Tarteka ekaitza" },
+                    {"Nubes altas", "Hodei altuak" },
+                    {"Intervalos nubosos con lluvia escasa", "Euri pixkabat" }
+                };
 
                 XDocument doc = XDocument.Load(path);
                 var dias = doc.Descendants("dia");
@@ -92,9 +107,7 @@ namespace TPVApp
                     double precipitacionVal = double.TryParse(precipitacion, NumberStyles.Any, CultureInfo.InvariantCulture, out double p) ? p : 0;
                     double temperatura = double.TryParse(temperaturaStr, NumberStyles.Any, CultureInfo.InvariantCulture, out double t) ? t : 0;
 
-
-
-                    string descripcion = $"📅 {fecha}\n🌡️ Temp: {temperatura} °C\n☔ Lluvia: {Math.Round(precipitacionVal)}%\n";
+                    string descripcion = $"📅 Data: {fecha}\n🌡️ Tenperatura: {temperatura} °C\n☔ Euria: {Math.Round(precipitacionVal)}%\n";
 
                     var cielos = dia.Elements("estado_cielo")
                         .Where(x => x.Attribute("periodo") != null)
@@ -105,7 +118,13 @@ namespace TPVApp
                     {
                         string periodo = grupo.Key;
                         string desc = grupo.FirstOrDefault()?.Value;
-                        descripcion += $"☁️ Cielo ({periodo}): {desc}\n";
+
+                        if (traducciones.ContainsKey(desc))
+                        {
+                            desc = traducciones[desc];
+                        }
+
+                        descripcion += $"☁️ Zerua ({periodo}): {desc}\n";
                     }
 
                     var cieloUnico = dia.Elements("estado_cielo")
@@ -113,10 +132,14 @@ namespace TPVApp
                         .FirstOrDefault();
                     if (cieloUnico != null)
                     {
-                        descripcion += $"☁️ Cielo: {cieloUnico.Value}\n";
+                        string desc = cieloUnico.Value;
+                        if (traducciones.ContainsKey(desc))
+                        {
+                            desc = traducciones[desc];
+                        }
+                        descripcion += $"☁️ Zerua: {desc}\n";
                     }
 
-                    // Crear RichTextBox
                     RichTextBox txt = new RichTextBox
                     {
                         Text = descripcion,
@@ -128,7 +151,6 @@ namespace TPVApp
                         BackColor = SystemColors.Control
                     };
 
-                    // Seleccionar imagen según temperatura
                     PictureBox img = new PictureBox
                     {
                         Size = new Size(60, 60),
@@ -145,7 +167,7 @@ namespace TPVApp
                     PictureBox imgLluvia = new PictureBox
                     {
                         Size = new Size(60, 60),
-                        Location = new Point(10, y + 80), // debajo de la otra imagen
+                        Location = new Point(10, y + 80),
                         SizeMode = PictureBoxSizeMode.Zoom
                     };
                     string rutaLluvia = Path.Combine(Application.StartupPath, "Resources", "lluvia.png");
@@ -156,8 +178,6 @@ namespace TPVApp
                         imgLluvia.Image = Image.FromFile(rutaSeco);
 
                     panelResultados.Controls.Add(imgLluvia);
-
-                    // Añadir al panel
                     panelResultados.Controls.Add(img);
                     panelResultados.Controls.Add(txt);
 
@@ -166,7 +186,7 @@ namespace TPVApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al mostrar predicción: {ex.Message}");
+                MessageBox.Show($"Errorea iragarpena bistaratzean: {ex.Message}");
             }
         }
     }

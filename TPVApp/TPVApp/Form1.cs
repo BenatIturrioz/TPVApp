@@ -19,15 +19,15 @@ namespace TPVApp
             InitializeComponent();
             SetPlaceholders();
             this.WindowState = FormWindowState.Maximized;
-
         }
+
         private void SetPlaceholders()
         {
-            // Establecer los placeholders iniciales
+            // Hasierako testuak ezarri (placeholder-ak)
             SetPlaceholder(erabiltzaileaTextBox, "Erabiltzailea");
             SetPlaceholder(pasahitzaTextBox, "Pasahitza", true);
 
-            // Agregar eventos para manejar los placeholders
+            // Gertaerak gehitu placeholder-ak kudeatzeko
             erabiltzaileaTextBox.Enter += (s, e) => RemovePlaceholder(erabiltzaileaTextBox, "Erabiltzailea");
             erabiltzaileaTextBox.Leave += (s, e) => SetPlaceholder(erabiltzaileaTextBox, "Erabiltzailea");
 
@@ -54,12 +54,10 @@ namespace TPVApp
                 if (isPassword) textBox.UseSystemPasswordChar = true;
             }
         }
+
         private void erregistroakGorde(string ErabiltzaileIzena, string mensaje)
         {
             string carpeta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Registroak");
-
-
-
             string rutaArchivo = Path.Combine(carpeta, "erregistroak.txt");
 
             string logMessage = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss}: {mensaje} - Izena: {ErabiltzaileIzena}";
@@ -70,18 +68,18 @@ namespace TPVApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo guardar el registro: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ezin izan da erregistroa gorde: " + ex.Message, "Errorea", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void saioaHasiButton_Click(object sender, EventArgs e)
         {
-            string erabiltzaile = erabiltzaileaTextBox.Text.Trim(); ;
+            string erabiltzaile = erabiltzaileaTextBox.Text.Trim();
             string pasahitza = pasahitzaTextBox.Text.Trim();
 
             if (string.IsNullOrEmpty(erabiltzaile) || string.IsNullOrEmpty(pasahitza))
             {
-                MessageBox.Show("Sartzeko erabiltzailea eta pasahitza sartu behar da", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Erabiltzailea eta pasahitza sartu behar dira", "Abisua", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -92,8 +90,6 @@ namespace TPVApp
                     ErabiltzaileIzena = erabiltzaile,
                     Pasahitza = pasahitza
                 };
-
-
 
                 if (erabiltzailea.ValidarErabiltzailea())
                 {
@@ -119,7 +115,7 @@ namespace TPVApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Saioa hasterakoan arazoa: " + ex.Message, "Arazoa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Saioa hastean errorea gertatu da: " + ex.Message, "Errorea", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

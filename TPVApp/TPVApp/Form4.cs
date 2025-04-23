@@ -13,27 +13,25 @@ namespace TPVApp
 {
     public partial class Form4 : Form
     {
-        // Declarar la propiedad para almacenar el objeto Eskaera
+        // Eskaera objektua gordetzeko propietatea
         private Eskaera eskaera;
 
-        // Constructor que recibe el objeto Eskaera
+        // Eraikitzailea: Eskaera objektua jasotzen du
         public Form4(Eskaera eskaera)
         {
             InitializeComponent();
-            this.eskaera = eskaera; // Asignar el objeto recibido a la propiedad
+            this.eskaera = eskaera; // Jasotako objektua esleitu
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            // Llamar al método MahaiakErakutsi pasando el objeto eskaera
+            // Mahaia erakusteko metodoa deitzen da, eskaera objektua pasatuz
             Mahaia.MahaiakErakutsi(eskaera, flowLayoutPanel1, this);
         }
 
         private void flowLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
         {
-
+            // Hemen ez dago kode funtzionalik oraindik
         }
     }
-
 }
-

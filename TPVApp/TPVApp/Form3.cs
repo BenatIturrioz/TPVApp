@@ -28,8 +28,8 @@ namespace TPVApp
             {
                 Dock = DockStyle.Fill,
                 AutoScroll = true,
-                FlowDirection = FlowDirection.TopDown, 
-                WrapContents = false 
+                FlowDirection = FlowDirection.TopDown,
+                WrapContents = false
             };
             messageField = new TextBox
             {
@@ -41,10 +41,9 @@ namespace TPVApp
             Controls.Add(messageField);
         }
 
-
         private void MessageField_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13) 
+            if (e.KeyChar == (char)13) // Enter tekla
             {
                 HandleSendMessage();
             }
@@ -55,9 +54,9 @@ namespace TPVApp
             string message = messageField.Text;
             if (!string.IsNullOrEmpty(message))
             {
-                AddMessage(message, true); 
-                SendMessage(message); 
-                messageField.Clear();
+                AddMessage(message, true); // Erabiltzailearen mezua
+                SendMessage(message);      // Mezua zerbitzarira
+                messageField.Clear();      // Testua garbitu
             }
         }
 
@@ -76,8 +75,8 @@ namespace TPVApp
             }
             catch (Exception e)
             {
-                AddMessage("No se pudo conectar al servidor.", false);
-                MessageBox.Show(e.Message);
+                AddMessage("Ezin izan da zerbitzariarekin konektatu.", false);
+                MessageBox.Show("Errorea: " + e.Message, "Konexio errorea", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -90,13 +89,13 @@ namespace TPVApp
                 {
                     Invoke((MethodInvoker)delegate
                     {
-                        AddMessage(incomingMessage, false);
+                        AddMessage(incomingMessage, false); // Zerbitzariaren mezua
                     });
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show("Errorea mezuak jasotzean: " + e.Message, "Errorea", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -104,8 +103,8 @@ namespace TPVApp
         {
             if (outWriter != null)
             {
-                outWriter.WriteLine(message); 
-                outWriter.Flush(); 
+                outWriter.WriteLine(message);
+                outWriter.Flush();
             }
         }
 
@@ -120,7 +119,7 @@ namespace TPVApp
                 BackColor = isSentByUser ? System.Drawing.Color.LightBlue : System.Drawing.Color.LightGreen,
                 ForeColor = System.Drawing.Color.Black,
                 TextAlign = System.Drawing.ContentAlignment.MiddleLeft,
-                Margin = new Padding(5) 
+                Margin = new Padding(5)
             };
 
             FlowLayoutPanel messageBox = new FlowLayoutPanel
@@ -133,7 +132,7 @@ namespace TPVApp
 
             messageBox.Controls.Add(messageLabel);
             messageArea.Controls.Add(messageBox);
-            messageArea.ScrollControlIntoView(messageBox); 
+            messageArea.ScrollControlIntoView(messageBox);
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -142,4 +141,3 @@ namespace TPVApp
         }
     }
 }
-
